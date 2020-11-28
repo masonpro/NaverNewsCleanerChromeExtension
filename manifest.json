@@ -12,7 +12,7 @@
     "content_scripts": [
         {
           "matches": [
-              "https://news.naver.com/main/read.nhn*"
+              "https://news.naver.com/main/*"
             ],
           "run_at": "document_end",
           "js": [
