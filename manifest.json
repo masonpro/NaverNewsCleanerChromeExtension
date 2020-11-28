@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
-    "name": "네이버뉴스 광고/댓글 관리",
-    "description": "네이버뉴스 광고/댓글 관리",
+    "name": "네이버뉴스 광고/댓글 감추기",
+    "description": "네이버뉴스 기사내용만 보겠습니다.",
     "version": "1.0.0",
     "background": {
         "scripts": [
@@ -11,9 +11,13 @@
     },
     "content_scripts": [
         {
-          "matches": ["https://news.naver.com/main/read.nhn*"],
+          "matches": [
+              "https://news.naver.com/main/read.nhn*"
+            ],
           "run_at": "document_end",
-          "js": ["cleaner.js"]
+          "js": [
+              "cleaner.js"
+            ]
         }
     ],
     "browser_action": {
@@ -24,7 +28,6 @@
         "tabs",
         "webRequest",
         "webRequestBlocking",
-        "https://*/*",
-        "http://*/*"
+        "https://*/*"
     ]
 }

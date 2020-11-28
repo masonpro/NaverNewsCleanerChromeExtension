@@ -1,20 +1,16 @@
 const blockedUrl = [
-    "https://news.naver.com/main/read.nhn*"
+    "https://apis.naver.com/commentBox/*"
 ]
 
 chrome.webRequest.onBeforeRequest.addListener(
-
     function (info) {
-        // return { 
-        //     cancel: true 
-        // }
+        // alert("차단되었습니다.")
+        return { 
+            cancel: true 
+        }
     },
-
-    // filters
     {
         urls: blockedUrl
     },
-
-    // extraInfoSpec
-    ["blocking"]
+    [ "blocking" ]
 )
