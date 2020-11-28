@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "네이버뉴스 광고/댓글 관리",
+    "description": "네이버뉴스 광고/댓글 관리",
+    "version": "1.0.0",
+    "background": {
+        "scripts": [
+            "blocker.js"
+        ],
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://news.naver.com/main/read.nhn*"],
+          "run_at": "document_end",
+          "js": ["cleaner.js"]
+        }
+    ],
+    "browser_action": {
+        "default_icon": "naver-logo.png"
+    },
+    "permissions": [
+        "background",
+        "tabs",
+        "webRequest",
+        "webRequestBlocking",
+        "https://*/*",
+        "http://*/*"
+    ]
+}
